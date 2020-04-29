@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <Header />
+    <!-- getCrumbs.length为0时，不显示面包屑导航 -->
+    <Crumbs v-show="getHasCrumbs&&getCrumbs.length" />
     <!-- 有面包屑导航的时候添加class content-has-crumbs是为了控制有无面包屑导航时的页面最小高度 -->
     <div class="content" :class="{'content-has-crumbs':getHasCrumbs&&getCrumbs.length}">
-      <!-- getCrumbs.length为0时，不显示面包屑导航 -->
-      <Crumbs v-show="getHasCrumbs&&getCrumbs.length" />
       <router-view></router-view>
     </div>
     <Footer />
