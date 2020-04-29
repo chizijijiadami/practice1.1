@@ -8,7 +8,7 @@ module.exports = {
         config.resolve.alias
             .set("@", resolve('src'))
     },
-    configureWebpack: config => {
+    configureWebpack: () => {
         if (process.env.NODE_ENV !== 'production') return;
         return {
             plugins: [
